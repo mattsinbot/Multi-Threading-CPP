@@ -1,0 +1,119 @@
+#
+# Generated Makefile - do not edit!
+#
+# Edit the Makefile in the project folder instead (../Makefile). Each target
+# has a -pre and a -post target defined where you can add customized code.
+#
+# This makefile implements configuration specific macros and targets.
+
+
+# Environment
+MKDIR=mkdir
+CP=cp
+GREP=grep
+NM=nm
+CCADMIN=CCadmin
+RANLIB=ranlib
+CC=gcc
+CCC=g++
+CXX=g++
+FC=gfortran
+AS=as
+
+# Macros
+CND_PLATFORM=GNU-Linux
+CND_DLIB_EXT=so
+CND_CONF=Debug
+CND_DISTDIR=dist
+CND_BUILDDIR=build
+
+# Include project Makefile
+include Makefile
+
+# Object Directory
+OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
+
+# Object Files
+OBJECTFILES= \
+	${OBJECTDIR}/Graphics.o \
+	${OBJECTDIR}/Intersection.o \
+	${OBJECTDIR}/Street.o \
+	${OBJECTDIR}/TrafficLight.o \
+	${OBJECTDIR}/TrafficObject.o \
+	${OBJECTDIR}/Vehicle.o \
+	${OBJECTDIR}/main.o
+
+
+# C Compiler Flags
+CFLAGS=
+
+# CC Compiler Flags
+CCFLAGS=-I /usr/local/include/opencv4 -pthread
+CXXFLAGS=-I /usr/local/include/opencv4 -pthread
+
+# Fortran Compiler Flags
+FFLAGS=
+
+# Assembler Flags
+ASFLAGS=
+
+# Link Libraries and Options
+LDLIBSOPTIONS=`pkg-config --libs opencv4`  
+
+# Build Targets
+.build-conf: ${BUILD_SUBPROJECTS}
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/traffic-simulation_max
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/traffic-simulation_max: ${OBJECTFILES}
+	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/traffic-simulation_max ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Graphics.o: Graphics.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g `pkg-config --cflags opencv4` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Graphics.o Graphics.cpp
+
+${OBJECTDIR}/Intersection.o: Intersection.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g `pkg-config --cflags opencv4` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Intersection.o Intersection.cpp
+
+${OBJECTDIR}/Street.o: Street.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g `pkg-config --cflags opencv4` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Street.o Street.cpp
+
+${OBJECTDIR}/TrafficLight.o: TrafficLight.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g `pkg-config --cflags opencv4` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TrafficLight.o TrafficLight.cpp
+
+${OBJECTDIR}/TrafficObject.o: TrafficObject.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g `pkg-config --cflags opencv4` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TrafficObject.o TrafficObject.cpp
+
+${OBJECTDIR}/Vehicle.o: Vehicle.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g `pkg-config --cflags opencv4` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Vehicle.o Vehicle.cpp
+
+${OBJECTDIR}/main.o: main.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g `pkg-config --cflags opencv4` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+# Subprojects
+.build-subprojects:
+
+# Clean Targets
+.clean-conf: ${CLEAN_SUBPROJECTS}
+	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
+
+# Subprojects
+.clean-subprojects:
+
+# Enable dependency checking
+.dep.inc: .depcheck-impl
+
+include .dep.inc
